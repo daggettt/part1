@@ -1,11 +1,11 @@
 
-const App = () => {
+function App() {
 
-  console.log('this is a test2')
+  console.log('this is a test for page refresh')
 
   return (
     <div>
-    <p>Hellllloooo!</p>
+    <p>Greetings!</p>
     </div>
   )
 }
