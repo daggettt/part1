@@ -1,7 +1,6 @@
-/* Refactor to have 3 new components - Header, Content, Footer*/
+/* Exercises 1.3 - 1.5 */
 
 const Header = (props) => {
-  console.log('this is the header component')
   return (
     <div>
       <h1>{props.course}</h1>
@@ -12,7 +11,7 @@ const Header = (props) => {
 const Content = (props) => {
   return (
     <div>
-      <h3>Unit: {props.part}</h3>
+      <h3>Unit: {props.name}</h3>
       <p>Exercises: {props.exercises}</p>
     </div>
   )
@@ -27,23 +26,30 @@ const Total = (props) => {
 }
 
 const App = () => {
-  console.log('this is exercise 1.1')
+
+  console.log('1.3 complete')
 
   const course = 'Half Stack application dev'
-  const part1 = 'Fundamentals of React'
-  const exercise1 = 10
-  const part2 = 'Using props to pass data'
-  const exercise2 = 7
-  const part3 = 'State of a component'
-  const exercise3 = 14
+  const part1 = {
+    name: 'Fundamentals of React',
+    exercises: 10,
+  }
+  const part2 = {
+    name: 'Using props to pass data',
+    exercises: 7,
+  }
+  const part3 = {
+    name: 'State of a component',
+    exercises: 14,
+  }
 
   return (
     <div>
       <Header course={course}/>
-      <Content part={part1} exercises={exercise1}/>
-      <Content part={part2} exercises={exercise2}/>
-      <Content part={part3} exercises={exercise3}/>
-      <Total total={exercise1 + exercise2 + exercise3}/>
+      <Content name={part1.name} exercises={part1.exercises}/>
+      <Content name={part2.name} exercises={part2.exercises}/>
+      <Content name={part3.name} exercises={part3.exercises}/>
+      <Total total={part1.exercises + part2.exercises + part3.exercises}/>
     </div>
   )
 }
