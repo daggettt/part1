@@ -20,13 +20,13 @@ const Content = (props) => {
 const Total = (props) => {
   return (
     <div>
-      <h4>Total exercises for the course: {props.total}</h4>
+      <h3>Total exercises for the course: {props.total}</h3>
     </div>
   )
 }
 
 const App = () => {
-  console.log('1.4 ongoing')
+  console.log('1.4 complete')
   
 
   const course = 'Half Stack application development'
@@ -51,10 +51,13 @@ const App = () => {
 
   const partstotal = partsexercises.reduce((sum, num) => sum + num)
   
+
   return (
     <div>
       <Header course={course}/>
-      <Content name={partsnames} exercises={partsexercises}/>
+      <Content name={partsnames[0]} exercises={partsexercises[0]}/>
+      <Content name={partsnames[1]} exercises={partsexercises[1]}/>
+      <Content name={partsnames[2]} exercises={partsexercises[2]}/>
       <Total total={partstotal}/>
     </div>
   )
