@@ -26,39 +26,43 @@ const Total = (props) => {
 }
 
 const App = () => {
-  console.log('1.4 complete')
-  
+  const course = {
+    name: 'Half Stack Application Development',
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      },
+    ]
+  }
 
-  const course = 'Half Stack application development'
-  const parts = [
-    {
-      name: 'Fundamentals of React',
-      exercises: 10,
-    },
-    {
-      name: 'Using props to pass data',
-      exercises: 7,
-    },
-    {
-      name: 'State of a component',
-      exercises: 14,
-    }
-  ]
+ /*
+  course.parts.forEach((part) => {
+    courseparts.push(part)
+  }
+ 
+  console.log(course.parts)
+  console.log(course.parts[0].name + ' ' + course.parts[0].exercises)
 
-  const partsnames = parts.map(parts => parts.name)
+  /*const coursenames = course[parts].map(parts => parts.name)
+  const partsexercises = course.map(parts => parts.exercises)
+  const partstotal = partsexercises.reduce((sum, num) => sum + num)/
 
-  const partsexercises = parts.map(parts => parts.exercises)
-
-  const partstotal = partsexercises.reduce((sum, num) => sum + num)
-  
+  const coursenames = course[parts].map(parts => parts.name) */
 
   return (
     <div>
-      <Header course={course}/>
-      <Content name={partsnames[0]} exercises={partsexercises[0]}/>
-      <Content name={partsnames[1]} exercises={partsexercises[1]}/>
-      <Content name={partsnames[2]} exercises={partsexercises[2]}/>
-      <Total total={partstotal}/>
+      <Header course={course.name}/>
+      <Content name={course.name} exercises={10}/>
+      <Total total={10}/>
     </div>
   )
 }
