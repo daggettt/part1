@@ -1,32 +1,19 @@
-/* Part 1 C */
+/* Part 1 C - Stateful Components */
 
-const Hello = ({name, age}) => {
-
-  const bornYear = () => new Date().getFullYear() - age
-
-  return (
-    <div>
-      <p>
-        Hello {name}, you are {age} years old.
-      </p>
-      <p>So you were probably born in {bornYear()}.</p>
-    </div>
-  )
-}
+import { useState } from "react"
 
 const App = () => {
-  const name = 'Peter'
-  const age = 10
+  const [ counter, setCounter ] = useState(0)
+
+  setTimeout(
+    () => setCounter(counter + 1),
+    1000 
+  )
 
   return (
     <div>
-      <h1>Greetings</h1>
-      <Hello name="Maya" age={20+8} />
-      <Hello name={name} age={age} />
+      {counter}
     </div>
   )
-
-
 }
-
 export default App
