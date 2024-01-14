@@ -22,6 +22,15 @@ const Button = ({ handleClick, text}) => (
   </button>
 )
 
+const Total = (props) => {g
+  return (
+    <div>
+      {props.total}
+    </div>
+  )
+}
+
+
 
 const App = () => {
   
@@ -48,9 +57,10 @@ const App = () => {
     <div>
       {left}
       <Button handleClick={handleLeftClick} text='left'/>
-      <Button handleClick={handleRightClick} text='right' />
+      <Button handleClick={handleRightClick} text='right'/>
       {right}
       <History allClicks={allClicks}/>
+      <Total total={total}/>
     </div>
   )
 
